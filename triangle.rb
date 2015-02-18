@@ -14,6 +14,14 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
+  
+  if (a <= 0 or b <= 0 or c <= 0)
+    raise TriangleError, "Invalid side value"
+  end
+  if (a + b <= c or a + c <= b or b + c <= a)
+    raise TriangleError, "One side is too long"
+  end
+  
   if (a == b)
     if (a == c)
       :equilateral
